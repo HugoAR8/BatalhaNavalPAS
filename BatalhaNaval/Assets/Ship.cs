@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class Ship : MonoBehaviour
 {
+    //Vida do navio
     protected float life = 0;
     [SerializeField] protected float maxLife;
 
+    //Velocidade do navio
     [SerializeField] protected float speed;
     protected float damagedSpeed;
 
-    [SerializeField] protected int smallCannonQtd;
-    [SerializeField] protected int mediumCannonQtd;
-    [SerializeField] protected int bigCannonQtd;
-    //Criar listas de cada tipo de canhão.
 
-
-
+    //Lista de canhões do navio
+    public GameObject[] cannons;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +26,6 @@ public class Ship : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public virtual void underAttack(float damage)
@@ -37,6 +34,10 @@ public class Ship : MonoBehaviour
 
     public virtual void Attack()
     {
+    }
+
+    public int getCannonsQtd(){
+        return cannons.Length;
     }
 
 }

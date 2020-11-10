@@ -9,6 +9,8 @@ public class mouseLook : MonoBehaviour
 
     public Transform playerBody;
 
+    //Fazer função que pega o script do navio que está ativo no momento
+    public Ship playerShip;
 
 
     float xRotation = 0f;
@@ -28,6 +30,14 @@ public class mouseLook : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
         float boatX = Input.GetAxis("Horizontal") * mouseSensitivity * Time.deltaTime;
 
+        if(Input.GetMouseButtonDown(0))
+        {
+            for(int i = 0; i < playerShip.getCannonsQtd(); i++)
+            {
+                playerShip.cannons[i].GetComponent<Cannon>().shoot();
+            }
+        }
+
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
@@ -35,6 +45,10 @@ public class mouseLook : MonoBehaviour
         yRotation = Mathf.Clamp(yRotation, -90f, 90f);
 
         transform.localRotation = Quaternion.Euler(xRotation,-yRotation,0f);
+        for(int i = 0; i < playerShip.getCannonsQtd(); i ++)
+        {
+            playerShip.cannons[i].transform.localRotation = Quaternion.Euler(xRotation, -yRotation, 0f);
+        }
 
         playerBody.Rotate(Vector3.up * boatX);
 
