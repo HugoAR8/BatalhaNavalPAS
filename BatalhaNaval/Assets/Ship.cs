@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ship : MonoBehaviour
+public abstract class Ship : MonoBehaviour
 {
     //Vida do navio
     protected float life = 0;
