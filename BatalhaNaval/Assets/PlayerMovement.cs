@@ -18,7 +18,11 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMask;
 
     private bool isGrounded;
-    // Update is called once per frame
+
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
     void Update()
     {
         //Gravidade
@@ -31,9 +35,8 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
 
-
-
         //Movimento
+        float boatX = Input.GetAxis("Horizontal") *50 * Time.deltaTime;
         float z = Input.GetAxis("Vertical");
         Vector3 move = transform.forward * z;
         if (z > 0)
@@ -45,10 +48,11 @@ public class PlayerMovement : MonoBehaviour
             controller.Move(move * backwardsSpeed * Time.deltaTime);
         }
 
-        
-       
+        transform.Rotate(Vector3.up * boatX);
 
-        
+
+
+
 
     }
 }

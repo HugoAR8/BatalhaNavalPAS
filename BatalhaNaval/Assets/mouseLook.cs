@@ -5,7 +5,8 @@ using UnityEngine;
 public class mouseLook : MonoBehaviour
 {
 
-    public float mouseSensitivity = 25f;
+    private float xmouseSensitivity = 100f;
+    private float ymouseSensitivity = 50f;
 
     public Transform playerBody;
 
@@ -17,26 +18,14 @@ public class mouseLook : MonoBehaviour
     float yRotation = 0f;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-    }
-
     // Update is called once per frame
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
-        float boatX = Input.GetAxis("Horizontal") * mouseSensitivity * Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X") * xmouseSensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * ymouseSensitivity * Time.deltaTime;
+        
 
-        if(Input.GetMouseButtonDown(0))
-        {
-            for(int i = 0; i < playerShip.getCannonsQtd(); i++)
-            {
-                playerShip.cannons[i].GetComponent<Cannon>().shoot();
-            }
-        }
+
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
@@ -44,13 +33,14 @@ public class mouseLook : MonoBehaviour
         yRotation -= mouseX;
         yRotation = Mathf.Clamp(yRotation, -90f, 90f);
 
-        transform.localRotation = Quaternion.Euler(xRotation,-yRotation,0f);
+
+        //rotação dos canhões
         for(int i = 0; i < playerShip.getCannonsQtd(); i ++)
         {
             playerShip.cannons[i].transform.localRotation = Quaternion.Euler(xRotation, -yRotation, 0f);
         }
 
-        playerBody.Rotate(Vector3.up * boatX);
+        
 
     }
 }

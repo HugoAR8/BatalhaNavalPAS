@@ -40,4 +40,8 @@ public abstract class Ship : MonoBehaviour
         return cannons.Length;
     }
 
+    public virtual void Destroyed()
+    {
+
+    }
 }
