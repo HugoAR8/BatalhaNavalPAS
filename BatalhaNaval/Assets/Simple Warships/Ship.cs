@@ -9,7 +9,7 @@ public abstract class Ship : MonoBehaviour
     [SerializeField] protected float maxLife;
 
     //Velocidade do navio
-    [SerializeField] protected float speed;
+    public float speed;
     protected float damagedSpeed;
 
 
@@ -42,6 +42,5 @@ public abstract class Ship : MonoBehaviour
 
     public virtual void Destroyed()
     {
-
     }
 }

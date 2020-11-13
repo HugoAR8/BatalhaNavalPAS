@@ -7,6 +7,11 @@ public class PlayerMovement : MonoBehaviour
 
     public CharacterController controller;
 
+
+    public static GameObject curShip;
+    [SerializeField] private GameObject[] allShips;
+
+
     private float speed = 120f;
     private float backwardsSpeed = 40f;
 
@@ -21,6 +26,39 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        if(gameControl.curShip == "Corvette")
+        {
+            controller.radius = 4f;
+            controller.height = 3.87f;
+            curShip = Instantiate(allShips[0], transform.position, transform.rotation);
+        }
+        else if(gameControl.curShip == "Frigate")
+        {
+            controller.radius = 3f;
+            controller.height = 2.18f;
+            curShip = Instantiate(allShips[1], transform.position, transform.rotation);
+        }
+        else if(gameControl.curShip == "Cruiser")
+        {
+            controller.radius = 4f;
+            controller.height = 3.87f;
+            curShip = Instantiate(allShips[2], transform.position, transform.rotation);
+        }
+        else if(gameControl.curShip == "Destroyer")
+        {
+            controller.radius = 2.5f;
+            controller.height = 0f;
+            curShip = Instantiate(allShips[3], transform.position, transform.rotation);
+        }
+        else
+        {
+            controller.radius = 2.5f;
+            controller.height = 0f;
+            curShip = Instantiate(allShips[4], transform.position, transform.rotation);
+        }
+        curShip.transform.parent = this.transform;
+        speed = curShip.GetComponent<Ship>().speed;
+        backwardsSpeed = speed / 3;
         Cursor.lockState = CursorLockMode.Locked;
     }
     void Update()

@@ -232,6 +232,7 @@ GameObject:
   - component: {fileID: 33327762779665612}
   - component: {fileID: 23787319477938654}
   - component: {fileID: 65869103804564740}
+  - component: {fileID: 8896337882746315647}
   m_Layer: 0
   m_Name: Large Turret
   m_TagString: Untagged
@@ -313,6 +314,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9, y: 3, z: 11}
   m_Center: {x: -0.0000030994415, y: 1.52, z: -0.7179928}
+--- !u!114 &8896337882746315647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135549564675162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 566b7f1c47a21b94ebc238a352c5951a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 25
+  cannonFirePoint: {fileID: 4389001865984196}
+  bullet: {fileID: 1636513530743218645, guid: 6433001cd432526488522d89033c7e88, type: 3}
 --- !u!1 &1157637660122630
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,6 +375,7 @@ GameObject:
   - component: {fileID: 33216202951023868}
   - component: {fileID: 23137177680154494}
   - component: {fileID: 64733126321154782}
+  - component: {fileID: 3385875028751410426}
   m_Layer: 0
   m_Name: Destroyer
   m_TagString: Untagged
@@ -445,6 +462,25 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300028, guid: 46cd524120389ad418423045618d2621, type: 3}
+--- !u!114 &3385875028751410426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171684472522874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e17d6ee027b15340b0cbafb0d45132c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLife: 400
+  speed: 140
+  cannons:
+  - {fileID: 1804226803506976}
+  - {fileID: 1960680065190340}
+  - {fileID: 1340392575870588}
+  - {fileID: 1135549564675162}
 --- !u!1 &1220600251093792
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,6 +677,7 @@ GameObject:
   - component: {fileID: 33054270697165356}
   - component: {fileID: 23832059228711746}
   - component: {fileID: 65955798476904992}
+  - component: {fileID: 6911110487334244398}
   m_Layer: 0
   m_Name: Medium Turret
   m_TagString: Untagged
@@ -722,6 +759,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.75, y: 2, z: 8}
   m_Center: {x: -0.00000023841858, y: 0.94, z: -0.5025952}
+--- !u!114 &6911110487334244398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340392575870588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 566b7f1c47a21b94ebc238a352c5951a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 25
+  cannonFirePoint: {fileID: 4113605631861824}
+  bullet: {fileID: 1636513530743218645, guid: 6433001cd432526488522d89033c7e88, type: 3}
 --- !u!1 &1709454527444920
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,6 +878,7 @@ GameObject:
   - component: {fileID: 33431259420305864}
   - component: {fileID: 23904952298632152}
   - component: {fileID: 65197536917528936}
+  - component: {fileID: 6846415414920914518}
   m_Layer: 0
   m_Name: Small Turret
   m_TagString: Untagged
@@ -907,6 +960,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.25, y: 1, z: 4}
   m_Center: {x: -0.0000010728836, y: 0.57, z: -0.23933113}
+--- !u!114 &6846415414920914518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804226803506976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 566b7f1c47a21b94ebc238a352c5951a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 25
+  cannonFirePoint: {fileID: 4175947757949854}
+  bullet: {fileID: 1636513530743218645, guid: 6433001cd432526488522d89033c7e88, type: 3}
 --- !u!1 &1960680065190340
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,6 +987,7 @@ GameObject:
   - component: {fileID: 33484594461727880}
   - component: {fileID: 23855937137500912}
   - component: {fileID: 65273600302737234}
+  - component: {fileID: 2931290738916704369}
   m_Layer: 0
   m_Name: Small Turret
   m_TagString: Untagged
@@ -1000,3 +1069,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.25, y: 1, z: 4}
   m_Center: {x: -0.0000010728836, y: 0.57, z: -0.23933113}
+--- !u!114 &2931290738916704369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960680065190340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 566b7f1c47a21b94ebc238a352c5951a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 25
+  cannonFirePoint: {fileID: 4257208993894192}
+  bullet: {fileID: 1636513530743218645, guid: 6433001cd432526488522d89033c7e88, type: 3}

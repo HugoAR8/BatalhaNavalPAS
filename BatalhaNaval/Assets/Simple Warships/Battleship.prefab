@@ -2754,7 +2754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLife: 1000
-  speed: 4
+  speed: 120
   cannons:
   - {fileID: 1872997639778798}
   - {fileID: 1159939571549066}
