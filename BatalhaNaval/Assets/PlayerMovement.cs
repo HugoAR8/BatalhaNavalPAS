@@ -63,6 +63,10 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            curShip.GetComponent<Ship>().Attack();
+        }
         //Gravidade
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if(isGrounded && velocity.y < 0)

@@ -18,10 +18,24 @@ public class PlayerRocket : MonoBehaviour
     {
         rb.velocity = transform.forward * speed; // Faz com que o tiro se mova.
     }
+
     void Update()
     {
         velocity.y += gravity * Time.deltaTime;
         rb.MovePosition(transform.position + velocity);
+
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        
+        Ship ship = other.GetComponent<Ship>();
+        if(ship != null)
+        {
+
+            ship.takeDamage(50);
+            Destroy(gameObject);
+        }
 
     }
 }

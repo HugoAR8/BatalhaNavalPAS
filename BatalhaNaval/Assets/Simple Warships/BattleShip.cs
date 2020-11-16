@@ -6,10 +6,6 @@ public class BattleShip : Ship
 {
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Attack();
-        }
         if(life <= 0)
         {
             Destroyed();

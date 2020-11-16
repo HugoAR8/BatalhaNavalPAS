@@ -26,6 +26,10 @@ public abstract class Ship : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(life <= 0 )
+        {
+            Destroyed();
+        }
     }
 
     public virtual void underAttack(float damage)
@@ -40,7 +44,14 @@ public abstract class Ship : MonoBehaviour
         return cannons.Length;
     }
 
-    public virtual void Destroyed()
+    public void takeDamage(float damage)
     {
+        //Melhorar a função de - com sobrecarga de operadores
+        life -= damage;
+    }
+
+    public void Destroyed()
+    {
+        Destroy(gameObject);
     }
 }
