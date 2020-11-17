@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visionDist: 1200
-  rb: {fileID: 0}
+  rb: {fileID: -7915167801720155059}
 --- !u!54 &-7915167801720155059
 Rigidbody:
   m_ObjectHideFlags: 0
