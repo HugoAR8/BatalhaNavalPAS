@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerRocket : MonoBehaviour
+public class EnemyRocket : MonoBehaviour
 {
     private float speed = 500f; // velocidade do tiro.
     private int damage = 20; // Dano do tiro.
@@ -11,7 +11,7 @@ public class PlayerRocket : MonoBehaviour
 
     //Gravidade do tiro
 
-    public Vector3 velocity; 
+    public Vector3 velocity;
     private float gravity = -2.81f;
 
     // Start is called before the first frame update
@@ -23,7 +23,7 @@ public class PlayerRocket : MonoBehaviour
     void Update()
     {
         life -= Time.deltaTime;
-        if(life <= 0)
+        if (life <= 0)
         {
             Destroy(gameObject);
         }
@@ -35,12 +35,12 @@ public class PlayerRocket : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        
+
         Ship ship = other.GetComponent<Ship>();
-        if (ship != null && ship.tag == "Enemy") 
+        if (ship != null && ship.tag == "Player")
         {
 
-            ship.takeDamage(50);
+            ship.takeDamage(30);
             Destroy(gameObject);
         }
 

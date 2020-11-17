@@ -46,7 +46,6 @@ public abstract class Ship : MonoBehaviour
 
     public void takeDamage(float damage)
     {
-        //Melhorar a função de - com sobrecarga de operadores
         life -= damage;
     }
 
@@ -54,4 +53,5 @@ public abstract class Ship : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
 }

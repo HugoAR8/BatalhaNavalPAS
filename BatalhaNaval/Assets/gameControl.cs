@@ -5,7 +5,7 @@ using Cinemachine;
 
 public class gameControl : MonoBehaviour
 {
-    public static string curShip = "abadebis";
+    public static string curShip = "Corvette";
     public CinemachineFreeLook cameraControl;
 
     private void Awake()

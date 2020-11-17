@@ -328,7 +328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 25
   cannonFirePoint: {fileID: 7549422360650241957}
-  bullet: {fileID: 1636513530743218645, guid: 6433001cd432526488522d89033c7e88, type: 3}
+  bullet: {fileID: 8162207591361784368, guid: 4ca5c538424247147b7889705ae5e4df, type: 3}
 --- !u!1 &7551859982687635381
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,7 +437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 25
   cannonFirePoint: {fileID: 7549482455507700491}
-  bullet: {fileID: 1636513530743218645, guid: 6433001cd432526488522d89033c7e88, type: 3}
+  bullet: {fileID: 8162207591361784368, guid: 4ca5c538424247147b7889705ae5e4df, type: 3}
 --- !u!1 &7551941699077680941
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,7 +638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 25
   cannonFirePoint: {fileID: 7549560225952234709}
-  bullet: {fileID: 1636513530743218645, guid: 6433001cd432526488522d89033c7e88, type: 3}
+  bullet: {fileID: 8162207591361784368, guid: 4ca5c538424247147b7889705ae5e4df, type: 3}
 --- !u!1 &7552413791309150725
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,7 +840,7 @@ GameObject:
   - component: {fileID: 7551393408409793400}
   m_Layer: 0
   m_Name: EnemyDestroyer
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1115,4 +1115,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 25
   cannonFirePoint: {fileID: 7549272734509949009}
-  bullet: {fileID: 1636513530743218645, guid: 6433001cd432526488522d89033c7e88, type: 3}
+  bullet: {fileID: 8162207591361784368, guid: 4ca5c538424247147b7889705ae5e4df, type: 3}

@@ -14,6 +14,8 @@ public class Enemy : MonoBehaviour
     public Rigidbody rb;
     private Ship ship;
     private float attackSpeed = 2f;
+    float randomCount = 75f;
+    float randomCounter = 5;
 
 
     private float rotationAngle;
@@ -34,7 +36,15 @@ public class Enemy : MonoBehaviour
         Movement = Direction;
         var rotationAux = Quaternion.LookRotation(player.transform.position - transform.position);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, rotationAux, rotateSpeed * Time.deltaTime);
-        var cannonRotationAux = Quaternion.LookRotation(new Vector3(player.transform.position.x, player.transform.position.y + 100, player.transform.position.z) - transform.position); 
+        
+
+        randomCounter -= Time.deltaTime;
+        if(randomCounter <= 0)
+        {
+            randomCount= Random.Range(75f, 200f);
+            randomCounter = 1;
+        }
+        var cannonRotationAux = Quaternion.LookRotation(new Vector3(player.transform.position.x, player.transform.position.y + randomCount, player.transform.position.z) - transform.position); 
 
 
         for (int i =0; i < ship.getCannonsQtd(); i ++)
