@@ -936,7 +936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e17d6ee027b15340b0cbafb0d45132c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 400
+  coinDrops: 100
   speed: 140
   cannons:
   - {fileID: 7551859982687635381}
@@ -951,9 +951,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7552494724014412015}
   serializedVersion: 2
-  m_Mass: 0.0000001
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Mass: 6000
+  m_Drag: 6000
+  m_AngularDrag: 6000
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0

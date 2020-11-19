@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerRocket : MonoBehaviour
 {
     private float speed = 500f; // velocidade do tiro.
-    private int damage = 20; // Dano do tiro.
     public Rigidbody rb; // Criando uma variavel para utilizar o rigidbody do tiro
     private float life = 4f;
 
@@ -40,7 +39,7 @@ public class PlayerRocket : MonoBehaviour
         if (ship != null && ship.tag == "Enemy") 
         {
 
-            ship.takeDamage(50);
+            ship.takeDamage(100);
             Destroy(gameObject);
         }
 

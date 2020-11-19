@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -21,6 +23,9 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 4f;
     public LayerMask groundMask;
+
+    public GameObject coins;
+    
 
     private bool isGrounded;
 
@@ -63,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
+        coins.GetComponent<TextMeshProUGUI>().text = gameControl.coins.ToString();
         if (Input.GetMouseButtonDown(0))
         {
             curShip.GetComponent<Ship>().Attack();

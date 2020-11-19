@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class BattleShip : Ship
 {
+    private void Start()
+    {
+        life = 1000;
+    }
     private void Update()
     {
         if(life <= 0)

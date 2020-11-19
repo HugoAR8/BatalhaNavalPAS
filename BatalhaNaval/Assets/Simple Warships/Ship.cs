@@ -6,7 +6,9 @@ public abstract class Ship : MonoBehaviour
 {
     //Vida do navio
     protected float life = 0;
-    [SerializeField] protected float maxLife;
+    protected float maxLife;
+
+    public int coinDrops = 0;
 
     //Velocidade do navio
     public float speed;
@@ -51,6 +53,7 @@ public abstract class Ship : MonoBehaviour
 
     public void Destroyed()
     {
+        gameControl.coins += coinDrops;
         Destroy(gameObject);
     }
 

@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Cruiser : Ship
 {
+
+    private void Start()
+    {
+        life = 700;
+    }
     private void Update()
     {
 
