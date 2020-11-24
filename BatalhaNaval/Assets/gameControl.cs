@@ -10,33 +10,10 @@ public class gameControl : MonoBehaviour
     public static string curShip = "Corvette";
     public CinemachineFreeLook cameraControl;
     public static int coins = 0;
-
-
-    private void Update()
-    {
-        
-        
-        if (curShip == "Corvette")
-        {
-            
-        }
-        else if (curShip == "Frigate")
-        {
-
-        }
-        else if (curShip == "Cruiser")
-        {
-
-        }
-        else if (curShip == "Destroyer") 
-        {
-
-        }
-        else
-        {
-            
-        }
-    }
+    public static bool boughtFrigate = false;
+    public static bool boughtCruiser = false;
+    public static bool boughtDestroyer = false;
+    public static bool boughtBatleship = false;
 
 
 }

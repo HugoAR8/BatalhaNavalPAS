@@ -36,21 +36,14 @@ public class Enemy : MonoBehaviour
         Movement = Direction;
         var rotationAux = Quaternion.LookRotation(player.transform.position - transform.position);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, rotationAux, rotateSpeed * Time.deltaTime);
-        
 
-        randomCounter -= Time.deltaTime;
-        if(randomCounter <= 0)
-        {
-            randomCount= Random.Range(75f, 200f);
-            randomCounter = 1;
-        }
-        var cannonRotationAux = Quaternion.LookRotation(new Vector3(player.transform.position.x, player.transform.position.y + randomCount, player.transform.position.z) - transform.position); 
-
+        var cannonRotationAux = Quaternion.LookRotation(new Vector3(player.transform.position.x, player.transform.position.y + randomCount, player.transform.position.z) - transform.position);
 
         for (int i =0; i < ship.getCannonsQtd(); i ++)
         {
             ship.cannons[i].transform.rotation = Quaternion.RotateTowards(ship.cannons[i].transform.rotation, cannonRotationAux, rotateSpeed * Time.deltaTime);
         }
+        
 
 
         if (dist > attackRange)
@@ -64,6 +57,7 @@ public class Enemy : MonoBehaviour
             if (attackSpeed <= 0)
             {
                 ship.Attack();
+                randomCount = Random.Range(40f, 160f);
                 attackSpeed = 2;
             }
             isMoving = false;

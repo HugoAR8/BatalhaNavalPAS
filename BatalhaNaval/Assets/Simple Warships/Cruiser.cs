@@ -14,6 +14,7 @@ public class Cruiser : Ship
 
         if (life <= 0)
         {
+           
             Destroyed();
         }
     }
@@ -28,7 +29,7 @@ public class Cruiser : Ship
 
         for (int i = 0; i < getCannonsQtd(); i++)
         {
-            cannons[i].GetComponent<Cannon>().shoot();
+            cannons[i].GetComponent<Cannon>().Shoot();
         }
 
     }

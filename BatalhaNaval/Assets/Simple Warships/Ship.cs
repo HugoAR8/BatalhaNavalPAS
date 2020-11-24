@@ -7,6 +7,7 @@ public abstract class Ship : MonoBehaviour
     //Vida do navio
     protected float life = 0;
     protected float maxLife;
+    public bool isDead = false;
 
     public int coinDrops = 0;
 
@@ -30,28 +31,25 @@ public abstract class Ship : MonoBehaviour
     {
         if(life <= 0 )
         {
+            isDead = true;
             Destroyed();
         }
     }
 
-    public virtual void underAttack(float damage)
-    {
-    }
+    public abstract void Attack();
 
-    public virtual void Attack()
-    {
-    }
+    public abstract void underAttack(float damage);
 
     public int getCannonsQtd(){
         return cannons.Length;
     }
 
-    public void takeDamage(float damage)
+    public virtual void takeDamage(float damage)
     {
         life -= damage;
     }
 
-    public void Destroyed()
+    public virtual void Destroyed()
     {
         gameControl.coins += coinDrops;
         Destroy(gameObject);

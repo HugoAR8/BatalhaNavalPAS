@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerMovement : MonoBehaviour
 {
 
-    public CharacterController controller;
 
+    public CharacterController controller;
+    public GameObject gameOverButton;
+    public static bool gameOver = false;
 
     public static GameObject curShip;
     [SerializeField] private GameObject[] allShips;
@@ -31,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        gameOver = false;
         if(gameControl.curShip == "Corvette")
         {
             controller.radius = 4f;
@@ -68,39 +73,54 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
-        coins.GetComponent<TextMeshProUGUI>().text = gameControl.coins.ToString();
-        if (Input.GetMouseButtonDown(0))
+        if (gameOver == false)
         {
-            curShip.GetComponent<Ship>().Attack();
+            coins.GetComponent<TextMeshProUGUI>().text = gameControl.coins.ToString();
+            if (Input.GetMouseButtonDown(0))
+            {
+                curShip.GetComponent<Ship>().Attack();
+            }
+            //Gravidade
+            isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+            if(isGrounded && velocity.y < 0)
+            {
+                velocity.y = -9f;
+            }
+            velocity.y += gravity * Time.deltaTime;
+
+            controller.Move(velocity * Time.deltaTime);
+
+            //Movimento
+            float boatX = Input.GetAxis("Horizontal") *50 * Time.deltaTime;
+            float z = Input.GetAxis("Vertical");
+            Vector3 move = transform.forward * z;
+            if (z > 0)
+            {
+                controller.Move(move * speed * Time.deltaTime);
+            }
+            else
+            {
+                controller.Move(move * backwardsSpeed * Time.deltaTime);
+            }
+            transform.Rotate(Vector3.up * boatX);
         }
-        //Gravidade
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        if(isGrounded && velocity.y < 0)
+        if (curShip == null)
         {
-            velocity.y = -9f;
+            gameOver = true;
         }
-        velocity.y += gravity * Time.deltaTime;
 
-        controller.Move(velocity * Time.deltaTime);
-
-        //Movimento
-        float boatX = Input.GetAxis("Horizontal") *50 * Time.deltaTime;
-        float z = Input.GetAxis("Vertical");
-        Vector3 move = transform.forward * z;
-        if (z > 0)
+        if(gameOver == true )
         {
-            controller.Move(move * speed * Time.deltaTime);
-        }
-        else
-        {
-            controller.Move(move * backwardsSpeed * Time.deltaTime);
+            Cursor.lockState = CursorLockMode.None;
+            gameOverButton.SetActive(true);
         }
 
-        transform.Rotate(Vector3.up * boatX);
+
+    }
 
 
-
-
-
+    public void returnToMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }

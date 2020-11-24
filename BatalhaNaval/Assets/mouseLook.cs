@@ -37,9 +37,12 @@ public class mouseLook : MonoBehaviour
 
 
         //rotação dos canhões
-        for(int i = 0; i < activeShip.getCannonsQtd(); i ++)
+        if (PlayerMovement.gameOver == false)
         {
-            activeShip.cannons[i].transform.localRotation = Quaternion.Euler(xRotation, -yRotation, 0f);
+            for (int i = 0; i < activeShip.getCannonsQtd(); i++)
+            {
+                activeShip.cannons[i].transform.localRotation = Quaternion.Euler(xRotation, -yRotation, 0f);
+            }
         }
 
         

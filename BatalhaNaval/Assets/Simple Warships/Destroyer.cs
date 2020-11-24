@@ -28,7 +28,7 @@ public class Destroyer : Ship
 
         for (int i = 0; i < getCannonsQtd(); i++)
         {
-            cannons[i].GetComponent<Cannon>().shoot();
+            cannons[i].GetComponent<Cannon>().Shoot();
         }
 
     }

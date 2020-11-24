@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 745872772132168049}
   - component: {fileID: 755555766365076755}
   - component: {fileID: 776308525898552869}
-  - component: {fileID: 7636772782740306731}
+  - component: {fileID: 735745636894844103}
   m_Layer: 0
   m_Name: Small Turret
   m_TagString: Untagged
@@ -426,7 +426,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.25, y: 1, z: 4}
   m_Center: {x: -0.0000010728836, y: 0.57, z: -0.23933113}
---- !u!114 &7636772782740306731
+--- !u!114 &735745636894844103
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -435,10 +435,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 732768856764576317}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 566b7f1c47a21b94ebc238a352c5951a, type: 3}
+  m_Script: {fileID: 11500000, guid: c3d813445d28c614b86ae441a4c1ac2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 25
   cannonFirePoint: {fileID: 730144832050725465}
   bullet: {fileID: 8162207591361784368, guid: 4ca5c538424247147b7889705ae5e4df, type: 3}
 --- !u!1 &732814487835054391
@@ -571,7 +570,7 @@ GameObject:
   - component: {fileID: 745847007120783091}
   - component: {fileID: 755860231071369117}
   - component: {fileID: 776953445558787009}
-  - component: {fileID: 2369107286064688700}
+  - component: {fileID: 3582648250562227158}
   m_Layer: 0
   m_Name: Small Turret
   m_TagString: Untagged
@@ -653,7 +652,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.25, y: 1, z: 4}
   m_Center: {x: -0.0000010728836, y: 0.57, z: -0.23933113}
---- !u!114 &2369107286064688700
+--- !u!114 &3582648250562227158
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -662,9 +661,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 732948710754015057}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 566b7f1c47a21b94ebc238a352c5951a, type: 3}
+  m_Script: {fileID: 11500000, guid: c3d813445d28c614b86ae441a4c1ac2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 25
   cannonFirePoint: {fileID: 738416666952750229}
   bullet: {fileID: 8162207591361784368, guid: 4ca5c538424247147b7889705ae5e4df, type: 3}

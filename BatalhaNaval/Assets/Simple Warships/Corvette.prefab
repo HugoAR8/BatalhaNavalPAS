@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33318028294671690}
   - component: {fileID: 23296002907487268}
   - component: {fileID: 65252156427083896}
-  - component: {fileID: 3084785360577418629}
+  - component: {fileID: 8971525649551301028}
   m_Layer: 0
   m_Name: Small Turret
   m_TagString: Untagged
@@ -94,7 +94,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.25, y: 1, z: 4}
   m_Center: {x: -0.0000010728836, y: 0.57, z: -0.23933113}
---- !u!114 &3084785360577418629
+--- !u!114 &8971525649551301028
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,10 +103,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1246362233793768}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 566b7f1c47a21b94ebc238a352c5951a, type: 3}
+  m_Script: {fileID: 11500000, guid: c3d813445d28c614b86ae441a4c1ac2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 25
   cannonFirePoint: {fileID: 4780112253054764}
   bullet: {fileID: 1636513530743218645, guid: 6433001cd432526488522d89033c7e88, type: 3}
 --- !u!1 &1250201171931244
@@ -252,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e14260c4d790c4849a6b5c5b77810f12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 100
+  coinDrops: 0
   speed: 160
   cannons:
   - {fileID: 1345887407032708}
@@ -269,7 +268,7 @@ GameObject:
   - component: {fileID: 33291162780752584}
   - component: {fileID: 23604865969555114}
   - component: {fileID: 65751940074335644}
-  - component: {fileID: 7193617587966394514}
+  - component: {fileID: 1559231336797915898}
   m_Layer: 0
   m_Name: Small Turret
   m_TagString: Untagged
@@ -351,7 +350,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.25, y: 1, z: 4}
   m_Center: {x: -0.0000010728836, y: 0.57, z: -0.23933113}
---- !u!114 &7193617587966394514
+--- !u!114 &1559231336797915898
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -360,10 +359,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1345887407032708}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 566b7f1c47a21b94ebc238a352c5951a, type: 3}
+  m_Script: {fileID: 11500000, guid: c3d813445d28c614b86ae441a4c1ac2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 25
   cannonFirePoint: {fileID: 4054640016407008}
   bullet: {fileID: 1636513530743218645, guid: 6433001cd432526488522d89033c7e88, type: 3}
 --- !u!1 &1376123167255182
