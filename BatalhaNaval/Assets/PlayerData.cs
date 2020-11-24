@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerData
 {
+    //Dados do player que vão ser salvos no arquivo
     public string curShip;
     public bool boughtFrigate;
     public bool boughtCruiser;

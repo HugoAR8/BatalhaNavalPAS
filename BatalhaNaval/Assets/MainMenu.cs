@@ -5,19 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    //Booleanas que checam qual parte do menu o jogador esta
     private bool isShop = false;
     private bool isMenu = true;
+
+    //Objeto menu e shop, para fazer com que o menu suma quando se esta no shop e vice-versa
     public GameObject menu;
     public GameObject shop;
 
+    //Botões de compra de cada navio
     public GameObject FrigateButton;
     public GameObject CruiserButton;
     public GameObject DestroyerButton;
     public GameObject BatleshipButton;
 
-
+    //Chamado ao inicio de cada cena
     private void Start()
     {
+        //Função pra destruir os botões do navios que já foram comprados na loja
         if(gameControl.boughtFrigate == true)
         {
             if (FrigateButton != null)
@@ -49,6 +54,7 @@ public class MainMenu : MonoBehaviour
         continueGame();
     }
 
+    //Função que reseta tudo que o player conseguiu coletar
     public void newGame()
     {
         gameControl.coins = 0;
@@ -61,6 +67,7 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    //Função de carregar os dados no arquivo de save do jogo
     public void continueGame()
     {
         PlayerData data = saveSystem.loadGame();
@@ -72,7 +79,7 @@ public class MainMenu : MonoBehaviour
         gameControl.boughtBatleship = data.boughtBatleship;
         
     }
-
+    //Função de ir para a proxima cena do jogo
     public void nextScene()
     {
         saveSystem.SaveGame();
@@ -80,13 +87,15 @@ public class MainMenu : MonoBehaviour
     }
 
     
-
+    //Função de  sair do jogo
     public void quitGame()
     {
         Debug.Log("Quit");
         Application.Quit();
         
     }
+
+    //Função de compra de cada barco do jogo
     public void buyFrigate()
     {
         if (gameControl.coins >= 350 && gameControl.boughtFrigate == false)
@@ -137,6 +146,8 @@ public class MainMenu : MonoBehaviour
             Destroy(BatleshipButton);
         }
     }
+
+    //Função de troca de menu
     public void changeMenu()
     {
         if(isMenu == false)

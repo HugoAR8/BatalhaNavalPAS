@@ -21,27 +21,33 @@ public class EnemyRocket : rocket
         rb.velocity = transform.forward * speed; // Faz com que o tiro se mova.
     }
 
+    //chamado a cada frame
     void Update()
     {
+        //Destruindo o tiro após um tempo dentro do game pro jogo pesar menos
         life -= Time.deltaTime;
         if (life <= 0)
         {
             Destroy(gameObject);
         }
 
+        //Gravidade do tiro 
         velocity.y += gravity * Time.deltaTime;
         rb.MovePosition(transform.position + velocity);
 
     }
 
+    //Função é chamada ao colidir com outro objeto
     private void OnTriggerStay(Collider other)
     {
 
+        //Caso tenha colidido com um objeto que contém o script ship e a tag é "Player"
         Ship ship = other.GetComponent<Ship>();
         if (ship != null && ship.tag == "Player")
         {
-
+            //Causar dano ao player
             ship.takeDamage(ship,this);
+            //Destruir tiro
             Destroy(gameObject);
         }
 

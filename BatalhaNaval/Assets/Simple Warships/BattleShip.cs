@@ -28,6 +28,7 @@ public class BattleShip : Ship
         //Roda um for pela lista de canhões do navio 
         for (int i = 0; i < getCannonsQtd(); i++)
         {
+            //Puxando a função de atirar de cada canhão da lista
             cannons[i].GetComponent<Cannon>().Shoot();
         }
 
