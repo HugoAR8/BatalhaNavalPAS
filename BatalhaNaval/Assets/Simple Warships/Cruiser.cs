@@ -19,10 +19,6 @@ public class Cruiser : Ship
         }
     }
 
-    public override void underAttack(float damage)
-    {
-        life -= damage;
-    }
 
     public override void Attack()
     {

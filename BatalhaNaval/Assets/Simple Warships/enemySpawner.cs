@@ -28,7 +28,7 @@ public class enemySpawner : MonoBehaviour
     {
         if(spawnSpeedDecrease > minimumSpawnSpeed)
         {
-            spawnSpeedDecrease -= 0.2f;
+            spawnSpeedDecrease -= 0.4f;
         }
         instanceXPosition = Random.RandomRange(-400f,400f);
         instanceZPosition = Random.RandomRange(-400f, 400f);

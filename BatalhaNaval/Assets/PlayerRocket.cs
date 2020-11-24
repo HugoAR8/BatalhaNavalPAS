@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerRocket : MonoBehaviour
+public class PlayerRocket : rocket
 {
     private float speed = 500f; // velocidade do tiro.
+
     public Rigidbody rb; // Criando uma variavel para utilizar o rigidbody do tiro
     private float life = 4f;
 
@@ -16,6 +17,7 @@ public class PlayerRocket : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        damage = 100;
         rb.velocity = transform.forward * speed; // Faz com que o tiro se mova.
     }
 
@@ -39,7 +41,7 @@ public class PlayerRocket : MonoBehaviour
         if (ship != null && ship.tag == "Enemy") 
         {
 
-            ship.takeDamage(100);
+            ship.takeDamage(ship,this);
             Destroy(gameObject);
         }
 

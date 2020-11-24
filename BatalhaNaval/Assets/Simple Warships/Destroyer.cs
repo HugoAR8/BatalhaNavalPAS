@@ -18,10 +18,6 @@ public class Destroyer : Ship
         }
     }
 
-    public override void underAttack(float damage)
-    {
-        life -= damage;
-    }
 
     public override void Attack()
     {

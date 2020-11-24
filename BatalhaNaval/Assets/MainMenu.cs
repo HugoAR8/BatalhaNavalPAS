@@ -46,6 +46,7 @@ public class MainMenu : MonoBehaviour
                 Destroy(BatleshipButton);
             }
         }
+        continueGame();
     }
 
     public void newGame()
@@ -56,11 +57,25 @@ public class MainMenu : MonoBehaviour
         gameControl.boughtCruiser = false;
         gameControl.boughtDestroyer = false;
         gameControl.boughtBatleship = false;
+        saveSystem.SaveGame();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void continueGame()
     {
+        PlayerData data = saveSystem.loadGame();
+        gameControl.coins = data.coins;
+        gameControl.curShip = data.curShip;
+        gameControl.boughtFrigate = data.boughtFrigate;
+        gameControl.boughtCruiser = data.boughtCruiser;
+        gameControl.boughtDestroyer = data.boughtDestroyer;
+        gameControl.boughtBatleship = data.boughtBatleship;
+        
+    }
+
+    public void nextScene()
+    {
+        saveSystem.SaveGame();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

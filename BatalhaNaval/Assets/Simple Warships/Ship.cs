@@ -5,8 +5,8 @@ using UnityEngine;
 public abstract class Ship : MonoBehaviour
 {
     //Vida do navio
-    protected float life = 0;
-    protected float maxLife;
+    protected int life = 0;
+    protected int maxLife;
     public bool isDead = false;
 
     public int coinDrops = 0;
@@ -38,15 +38,21 @@ public abstract class Ship : MonoBehaviour
 
     public abstract void Attack();
 
-    public abstract void underAttack(float damage);
 
     public int getCannonsQtd(){
         return cannons.Length;
     }
 
-    public virtual void takeDamage(float damage)
+    public virtual void takeDamage(Ship ship, rocket hitRocket)
     {
-        life -= damage;
+        ship.life = ship - hitRocket;
+    }
+
+    public static int operator - (Ship ship, rocket hitRocket)
+    {
+        int resultado;
+        resultado = ship.life - hitRocket.damage;
+        return resultado;
     }
 
     public virtual void Destroyed()

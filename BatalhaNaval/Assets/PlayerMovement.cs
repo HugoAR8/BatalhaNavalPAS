@@ -29,7 +29,9 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMask;
 
     public GameObject coins;
-    
+
+
+    private bool savedGame = false;
 
     private bool isGrounded;
 
@@ -75,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (gameOver == false)
         {
+            savedGame = false;
             coins.GetComponent<TextMeshProUGUI>().text = gameControl.coins.ToString();
             if (Input.GetMouseButtonDown(0))
             {
@@ -111,6 +114,11 @@ public class PlayerMovement : MonoBehaviour
 
         if(gameOver == true )
         {
+            if(savedGame == false)
+            {
+                saveSystem.SaveGame();
+                savedGame = true;
+            }
             Cursor.lockState = CursorLockMode.None;
             gameOverButton.SetActive(true);
         }
